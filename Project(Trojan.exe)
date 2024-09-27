@@ -32,7 +32,7 @@ class Release:
 
 releases = {}
 
-# File to store the releases data
+
 FILE_NAME = 'releases.pkl'
 
 def save_releases():
@@ -57,11 +57,11 @@ def create_release():
     state = input("Enter release state (Planned, In Progress, Released): ")
     notes = input("Enter any release notes: ")
 
-    release_id = str(uuid.uuid4())  # Unique identifier for each release
+    release_id = str(uuid.uuid4()) 
     new_release = Release(release_id, name, version, release_date, state, notes)
 
     releases[release_id] = new_release
-    save_releases()  # Save the updated releases dictionary
+    save_releases()  
     print(f"\nRelease '{name}' created with ID: {release_id}\n")
 
 def view_releases():
@@ -98,10 +98,10 @@ def delete_release():
     else:
         print("Release not found.")
 
-# Load the releases when the program starts
+
 load_releases()
 
-# Main loop
+
 while True:
     print("\n--- Software Release Tracker ---")
     print("1. Create a new release")
